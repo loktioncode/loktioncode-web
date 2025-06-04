@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import Paragraph from "../../styled/Paragraph";
 
-
 const Wrapper = styled.section`
 padding:0 20px;
 @media(min-width:1200px){

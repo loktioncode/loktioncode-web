@@ -258,11 +258,6 @@ function Header() {
               Portfolio
             </NavLink>
           </li>
-          <li>
-            <a href="/#contact" className={sectionActive("contact")}>
-              Contact
-            </a>
-          </li>
         </Menu>
         <Actions>
           <GhostAction href="/#services">Explore</GhostAction>
@@ -300,11 +295,6 @@ function Header() {
             <NavLink className={navActive} to="/portfolio" onClick={close}>
               Portfolio
             </NavLink>
-          </li>
-          <li onClick={close}>
-            <a href="/#contact" className={sectionActive("contact")}>
-              Contact
-            </a>
           </li>
         </OverlayMenu>
       </Overlay>

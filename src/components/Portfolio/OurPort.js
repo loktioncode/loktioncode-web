@@ -45,12 +45,34 @@ const Visual = styled.div`
   background: ${(p) => p.bg || "#ecece8"};
   flex-shrink: 0;
   width: 100%;
-  min-height: 220px;
+  min-height: 260px;
   position: relative;
   overflow: hidden;
   @media (min-width: 800px) {
     width: 52%;
     min-height: unset;
+  }
+  /* tinted overlay for cohesion */
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: ${(p) => p.tint || "transparent"};
+    pointer-events: none;
+    z-index: 1;
+  }
+`;
+
+const Collage = styled.div`
+  display: grid;
+  width: 100%;
+  height: 100%;
+  min-height: 260px;
+  grid-template-columns: ${(p) => p.cols || "1fr 1fr"};
+  grid-template-rows: ${(p) => p.rows || "1fr 1fr"};
+  gap: 3px;
+  @media (min-width: 800px) {
+    min-height: 380px;
   }
   img {
     width: 100%;
@@ -58,6 +80,13 @@ const Visual = styled.div`
     object-fit: cover;
     object-position: center;
     display: block;
+    transition: transform 600ms ${(p) => p.theme.ease.out};
+  }
+  article:hover & img { transform: scale(1.04); }
+  .span2 { grid-row: span 2; }
+  .span-col2 { grid-column: span 2; }
+  @media (prefers-reduced-motion: reduce) {
+    img { transition: none; }
   }
 `;
 

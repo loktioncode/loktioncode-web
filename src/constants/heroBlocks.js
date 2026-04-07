@@ -27,8 +27,8 @@ export const HERO_BLOCKS = [
   {
     key: "d",
     title: "Cloud, APIs & full-stack integration",
-    src: u("photo-1451187580459-43490279c0fa"),
-    srcSet: `${u("photo-1451187580459-43490279c0fa", 400)} 400w, ${u("photo-1451187580459-43490279c0fa", 800)} 800w`,
-    alt: "Global network and cloud technology concept",
+    src: u("photo-1629654297299-c8506221ca97"),
+    srcSet: `${u("photo-1629654297299-c8506221ca97", 400)} 400w, ${u("photo-1629654297299-c8506221ca97", 800)} 800w`,
+    alt: "Dark terminal with code on screen",
   },
 ];

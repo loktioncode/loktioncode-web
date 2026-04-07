@@ -255,6 +255,11 @@ function Header() {
               Portfolio
             </NavLink>
           </li>
+          <li>
+            <a href="https://elisha.loktioncode.org/" target="_blank" rel="noopener noreferrer">
+              Blog
+            </a>
+          </li>
         </Menu>
         <Actions>
           <GhostAction href="/#services">Explore</GhostAction>
@@ -292,6 +297,11 @@ function Header() {
             <NavLink className={navActive} to="/portfolio" onClick={close}>
               Portfolio
             </NavLink>
+          </li>
+          <li onClick={close}>
+            <a href="https://elisha.loktioncode.org/" target="_blank" rel="noopener noreferrer">
+              Blog
+            </a>
           </li>
         </OverlayMenu>
       </Overlay>

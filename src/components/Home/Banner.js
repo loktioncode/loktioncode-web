@@ -54,18 +54,17 @@ const Wrapper = styled.section`
     gap: 10px;
   }
   .right {
-    display: grid;
-    grid-template-columns: 1.6fr 1fr 1fr;
-    grid-template-rows: 1.1fr 1fr;
-    grid-template-areas:
-      "a a b"
-      "c d b";
-    gap: 8px;
-    height: min(58vh, 460px);
-    animation: riseIn 900ms ${(p) => p.theme.ease.out} both;
+    display: none;
     @media (min-width: 992px) {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr;
+      grid-template-rows: 1.1fr 1fr;
+      grid-template-areas:
+        "a a b"
+        "c d b";
       gap: 10px;
       height: min(72vh, 560px);
+      animation: riseIn 900ms ${(p) => p.theme.ease.out} both;
     }
   }
   @keyframes riseIn {

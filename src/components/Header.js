@@ -234,6 +234,7 @@ function Header() {
         <Link to="/" className="logo-link" aria-label="LOXIONCODE home">
           <Logo width={220} />
         </Link>
+        
         <Menu>
           <li>
             <a href="/#services" className={sectionActive("services")}>

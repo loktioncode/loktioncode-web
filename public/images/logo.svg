@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 52" width="200" height="52" role="img" aria-label="LOXIONCODE">
+  <title>LOXIONCODE</title>
+  <rect x="2" y="8" width="22" height="22" rx="6" fill="#FF6B6B"/>
+  <rect x="26" y="4" width="22" height="22" rx="6" fill="#4ECDC4"/>
+  <rect x="14" y="28" width="22" height="22" rx="6" fill="#FFE066"/>
+  <text x="56" y="33" font-family="Baloo2-Bold, system-ui, sans-serif" font-size="23" fill="#2e2640">LOXIONCODE</text>
+  <text x="56" y="48" font-family="Baloo2-SemiBold, system-ui, sans-serif" font-size="7" fill="#5c5369" letter-spacing="0.08em">TEAMWORK MAKES THE DREAM WORK</text>
+</svg>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" fill="none" aria-hidden="true">
+  <rect width="720" height="420" rx="20" fill="#f4f4f0"/>
+  <rect x="40" y="48" width="200" height="140" rx="14" fill="#0f1114"/>
+  <circle cx="140" cy="118" r="10" fill="#7dd3fc"/>
+  <path stroke="#52525b" stroke-width="2" d="M140 108v-28M140 128v28M132 118h-28M148 118h28"/>
+  <rect x="260" y="48" width="200" height="140" rx="14" fill="#0c4a6e"/>
+  <circle cx="360" cy="118" r="18" stroke="#38bdf8" stroke-width="3" fill="none"/>
+  <circle cx="360" cy="118" r="5" fill="#38bdf8"/>
+  <rect x="480" y="48" width="200" height="140" rx="14" fill="#14532d"/>
+  <rect x="520" y="88" width="120" height="72" rx="6" stroke="#4ade80" stroke-width="2" fill="#052e16"/>
+  <rect x="48" y="220" width="632" height="152" rx="16" fill="#ffffff" stroke="#e4e4e7"/>
+  <path stroke="#d4d4d8" stroke-width="1.5" d="M80 268h560M80 300h420M80 332h520"/>
+  <circle cx="72" cy="268" r="4" fill="#6366f1"/>
+  <circle cx="72" cy="300" r="4" fill="#22c55e"/>
+  <circle cx="72" cy="332" r="4" fill="#f59e0b"/>
+  <text x="360" y="404" text-anchor="middle" fill="#71717a" font-family="system-ui,sans-serif" font-size="13" letter-spacing="0.08em">TECH · AI · IoT · SYSTEMS</text>
+</svg>

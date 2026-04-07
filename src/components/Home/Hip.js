@@ -5,15 +5,15 @@ import Paragraph from "../../styled/Paragraph";
 import HipCard from "../../styled/HipCard";
 
 const Wrapper = styled.section`
-  padding: 10% 20px;
+  padding: 5% 20px;
   text-align: left;
   @media (min-width: 1200px) {
-    padding: 10% 8%;
+    padding: 4% 6%;
   }
   h2 {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     @media (min-width: 992px) {
-      width: 50%;
+      max-width: 640px;
     }
   }
 
@@ -21,99 +21,94 @@ const Wrapper = styled.section`
     @media (min-width: 992px) {
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      h2{
-        margin-bottom:0;
+      align-items: flex-end;
+      gap: 32px;
+      h2 {
+        margin-bottom: 0;
       }
       p {
-        width: 50%;
+        max-width: 520px;
       }
     }
   }
   .bottom {
-    margin-top: 30px;
-    @media (min-width: 768px) {
-      display: flex;
-      gap: 15px;
-      justify-content: space-between;
-      flex-wrap: wrap;
+    margin-top: 24px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    @media (min-width: 640px) {
+      grid-template-columns: repeat(2, 1fr);
     }
-    @media (min-width: 992px) {
-      gap: 30px;
-    }
-    .hip-card {
-      @media (min-width: 768px) {
-        width: 43%;
-        margin-bottom: 0;
-      }
-      @media (min-width: 1200px) {
-        width: 40%;
-      }
-      @media (min-width: 1400px) {
-        width: 41.5%;
-      }
-      &:last-child {
-        margin-bottom: 0;
-      }
+    @media (min-width: 1100px) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
     }
   }
 `;
 
 const hips = [
   {
-    link: "services",
-    heading: "Development Solutions",
-    text: "Our expert team delivers cutting-edge software development services, from custom applications to enterprise solutions. We leverage the latest technologies to create scalable, secure, and efficient software that drives your business forward.",
+    heading: "Custom software",
+    text: "Web, cloud, and internal tools  APIs, integrations, and reliable delivery pipelines for products that need to scale.",
     icon: "code",
-    bgColor: "#74C3C4",
+    bgColor: "#4ECDC4",
   },
   {
-    link: "services",
-    heading: "Branding",
-    text: "We help businesses establish a strong and memorable brand identity. Our comprehensive branding services include brand strategy, visual identity design, and brand messaging that resonates with your target audience and sets you apart from competitors.",
-    icon: "paint",
-    bgColor: "#BD4393",
-  },
-  {
-    link: "services",
-    heading: "UI/UX Design",
-    text: "Create exceptional user experiences with our UI/UX design services. We combine aesthetic appeal with functional design to create intuitive interfaces that enhance user engagement and drive conversion rates.",
-    icon: "design",
-    bgColor: "#20A1D2",
-  },
-  {
-    link: "services",
-    heading: "Network & Security",
-    text: "Protect your digital assets with our comprehensive network and security solutions. We implement robust security measures, conduct regular audits, and provide 24/7 monitoring to ensure your systems remain secure and operational.",
+    heading: "IoT & embedded",
+    text: "Sensors, edge gateways, telemetry, and OTA updates  systems that run where the network is messy and uptime matters.",
     icon: "network",
-    bgColor: "#E76713",
+    bgColor: "#FF6B6B",
+  },
+  {
+    heading: "PCB & firmware",
+    text: "Schematic through bring-up: layout support, prototypes, drivers, RTOS or bare-metal firmware, and test fixtures.",
+    icon: "pcb",
+    bgColor: "#9b8fd9",
+  },
+  {
+    heading: "Robotics & UAVs",
+    text: "Field robots, drones, and payloads  perception, controls, and autonomy with AI running on the device.",
+    icon: "uav",
+    bgColor: "#FF9F1C",
+  },
+  {
+    heading: "AI & custom models",
+    text: "Applied ML and CV: fine-tuned models, edge deployment, evaluation, and data pipelines aligned to your domain.",
+    icon: "brain",
+    bgColor: "#2d9cdb",
+  },
+  {
+    heading: "ICT consultancy & IT support",
+    text: "Networks, workstations, servers, and peripherals  structured IT support, incident response, and on-site help for hardware and connectivity issues.",
+    icon: "ict",
+    bgColor: "#4b5563",
   },
 ];
 
 function Hip() {
   return (
-    <Wrapper>
+    <Wrapper id="services">
       <div className="top">
-        <Heading textColor="#20a1d2">
-          We're Hip, We're Cool & <br /> We'll <span>Elevate Your Brand.</span>
+        <Heading textColor="#FF6B6B">
+          Serious systems, <span>playful craft.</span>
         </Heading>
         <Paragraph>
-          At LOKTIONCODE, we combine technical expertise with creative innovation to deliver exceptional digital solutions. Our team of experts is dedicated to helping businesses thrive in the digital age through cutting-edge technology and strategic thinking.
+          We bridge mechanical, electrical, and software  plus ICT consultancy:
+          IT support, networks, and hands-on hardware troubleshooting  so your
+          fleet, farm, or factory gets one coherent stack instead of several
+          vendors pointing fingers.
         </Paragraph>
       </div>
       <div className="bottom">
-        {hips.map((item, i) => {
-          return (
-            <HipCard
-              key={i}
-              link={item.link}
-              heading={item.heading}
-              text={item.text}
-              icon={item.icon}
-              bgColor={item.bgColor}
-            />
-          );
-        })}
+        {hips.map((item, i) => (
+          <HipCard
+            key={i}
+            heading={item.heading}
+            text={item.text}
+            icon={item.icon}
+            bgColor={item.bgColor}
+          />
+        ))}
       </div>
     </Wrapper>
   );

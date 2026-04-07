@@ -1,76 +1,87 @@
-import React from 'react';
-import styled from 'styled-components';
-import Heading from '../../styled/Heading';
-import GreatDiv from '../../styled/GreatDiv';
-import pic1 from '../../assets/doing1.webp'
-import pic2 from '../../assets/doing2.webp'
-import pic3 from '../../assets/doing3.webp'
-import pic4 from '../../assets/doing4.webp'
+import React from "react";
+import styled from "styled-components";
+import Heading from "../../styled/Heading";
+import GreatDiv from "../../styled/GreatDiv";
+import pic1 from "../../assets/doing1.webp";
+import pic2 from "../../assets/doing2.webp";
+import pic3 from "../../assets/doing3.webp";
+import pic4 from "../../assets/doing4.webp";
 
 const Wrapper = styled.section`
-    padding:0 20px;
-    @media(min-width:992px){
-        padding:5%;
+  padding: 0 20px;
+  @media (min-width: 992px) {
+    padding: 5%;
+  }
+  @media (min-width: 1200px) {
+    padding: 5% 10%;
+  }
+  h2 {
+    text-align: center;
+    margin-bottom: 8px;
+  }
+  img {
+    width: 100%;
+    @media (min-width: 992px) {
+      width: 45%;
     }
-    @media(min-width:1200px){
-        padding:5% 10%;
+    @media (min-width: 1200px) {
+      width: 55%;
     }
-    h2{
-        text-align:center;
-    }
-    img{
-        width:100%;
-        @media(min-width:992px){
-                width:45%;
-            }
-            @media(min-width:1200px){
-                width:55%;
-            }
-    }
-`
+  }
+`;
 
 const list = [
-    {
-        title: 'Mobile App Design',
-        text1: 'Our AI solutions leverage cutting-edge machine learning algorithms to help businesses make data-driven decisions and automate complex processes.',
-        text2: 'We develop custom software solutions that are tailored to your specific business needs, ensuring optimal performance and scalability.',
-        image: pic1, 
-    },
-    {
-        title: 'Branding',
-        text1: 'Our IoT solutions enable real-time monitoring and control of devices, helping businesses optimize operations and reduce costs.',
-        text2: 'We provide comprehensive cloud infrastructure services that ensure security, scalability, and high availability for your business applications.',
-        image: pic2, 
-    },
-    {
-        title: 'Software Development',
-        text1: 'Our team of experts combines technical knowledge with business understanding to deliver solutions that drive real business value.',
-        text2: 'We stay at the forefront of technology trends to ensure our clients benefit from the latest innovations in digital solutions.',
-        image: pic3, 
-    },
-    {
-        title: 'Systems Networking & Security',
-        text1: 'We believe in building long-term partnerships with our clients, providing ongoing support and continuous improvement of our solutions.',
-        text2: 'Our commitment to quality and innovation ensures that every solution we deliver meets the highest standards of excellence.',
-        image: pic4,  
-    },
-]
+  {
+    title: "Applications & platforms",
+    text1:
+      "Backend services, dashboards, and integrations  designed for operators and maintainers, not just demo day.",
+    text2:
+      "APIs, auth, observability, and release discipline so your product survives real traffic.",
+    image: pic1,
+  },
+  {
+    title: "Embedded & connectivity",
+    text1:
+      "RTOS and bare-metal bring-up, drivers, buses, and resilient networking across flaky links.",
+    text2:
+      "OTA, secure boot, and field diagnostics so fleets stay healthy after install.",
+    image: pic2,
+  },
+  {
+    title: "Hardware & firmware",
+    text1:
+      "Schematic support through prototype builds: test points, fixtures, and firmware that matches the BOM.",
+    text2:
+      "Power, EMC awareness, and iteration loops that keep fab and firmware in sync.",
+    image: pic3,
+  },
+  {
+    title: "Robotics, UAVs & edge AI",
+    text1:
+      "Perception and control on real hardware  cameras, IMUs, ESCs, and payloads  with AI that fits the compute budget.",
+    text2:
+      "Custom datasets, model selection, and deployment to edge accelerators or microcontrollers where needed.",
+    image: pic4,
+  },
+];
 
 function Great() {
   return (
     <Wrapper>
-        <Heading>What We're Great At Doing</Heading>
-        {list.map((item, i)=>{
-            return <GreatDiv 
-            key={i}
-            title={item.title}
-            text1={item.text1}
-            text2={item.text2}
-            image={item.image} 
-            />
-        })}
+      <Heading textColor="#2d9cdb">
+        What we’re <span>great</span> at
+      </Heading>
+      {list.map((item, i) => (
+        <GreatDiv
+          key={i}
+          title={item.title}
+          text1={item.text1}
+          text2={item.text2}
+          image={item.image}
+        />
+      ))}
     </Wrapper>
-  )
+  );
 }
 
-export default Great
+export default Great;

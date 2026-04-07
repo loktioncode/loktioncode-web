@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 340" fill="none" aria-hidden="true">
+  <rect width="600" height="340" rx="18" fill="#0c1a2e"/>
+  <!-- Night sky -->
+  <circle cx="60" cy="40" r="2" fill="white" opacity="0.6"/>
+  <circle cx="160" cy="22" r="1.5" fill="white" opacity="0.5"/>
+  <circle cx="280" cy="45" r="2" fill="white" opacity="0.7"/>
+  <circle cx="400" cy="18" r="1.5" fill="white" opacity="0.55"/>
+  <circle cx="500" cy="38" r="2" fill="white" opacity="0.6"/>
+  <circle cx="550" cy="60" r="1.5" fill="white" opacity="0.4"/>
+  <!-- Moon -->
+  <circle cx="540" cy="48" r="22" fill="#1e3a5f"/>
+  <circle cx="549" cy="42" r="17" fill="#0c1a2e"/>
+  <!-- Terrain -->
+  <path fill="#0f2d44" d="M0 260 Q80 220 160 255 Q240 280 320 240 Q400 205 480 245 Q540 265 600 250v90H0z"/>
+  <!-- UAV body -->
+  <rect x="262" y="110" width="76" height="22" rx="8" fill="#e2e8f0"/>
+  <!-- Arms -->
+  <rect x="220" y="118" width="46" height="7" rx="3.5" fill="#94a3b8"/>
+  <rect x="334" y="118" width="46" height="7" rx="3.5" fill="#94a3b8"/>
+  <!-- Motors + props -->
+  <circle cx="218" cy="116" r="12" fill="#334155" stroke="#64748b" stroke-width="1.5"/>
+  <path stroke="#cbd5e1" stroke-width="2.5" stroke-linecap="round" d="M206 116h24"/>
+  <circle cx="382" cy="116" r="12" fill="#334155" stroke="#64748b" stroke-width="1.5"/>
+  <path stroke="#cbd5e1" stroke-width="2.5" stroke-linecap="round" d="M370 116h24"/>
+  <!-- Camera gimbal -->
+  <circle cx="300" cy="138" r="10" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+  <circle cx="300" cy="138" r="4" fill="#38bdf8" opacity="0.8"/>
+  <!-- IR beam sweep -->
+  <path fill="#f97316" opacity="0.12" d="M300 148 L240 240 L360 240 Z"/>
+  <path stroke="#f97316" stroke-width="1.5" opacity="0.55" d="M300 148 L240 240M300 148 L360 240"/>
+  <!-- NDVI overlay on ground -->
+  <rect x="80" y="264" width="200" height="50" rx="6" fill="#14532d" opacity="0.5"/>
+  <text x="180" y="294" text-anchor="middle" fill="#86efac" font-family="system-ui,sans-serif" font-size="11" letter-spacing="0.04em">NDVI · 92% Coverage</text>
+  <!-- Detection box -->
+  <rect x="380" y="258" width="60" height="44" rx="4" fill="none" stroke="#f97316" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="410" y="278" text-anchor="middle" fill="#fb923c" font-family="system-ui,sans-serif" font-size="8">TARGET</text>
+  <text x="410" y="292" text-anchor="middle" fill="#fb923c" font-family="system-ui,sans-serif" font-size="7">DETECTED</text>
+  <!-- Telemetry panel -->
+  <rect x="20" y="22" width="140" height="68" rx="8" fill="#0f2d44" stroke="#38bdf8" stroke-width="1" opacity="0.9"/>
+  <text x="90" y="42" text-anchor="middle" fill="#7dd3fc" font-family="system-ui,sans-serif" font-size="9" font-weight="bold">RUSERO UAV</text>
+  <text x="90" y="56" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="8">Alt: 120m · Speed: 18m/s</text>
+  <text x="90" y="70" text-anchor="middle" fill="#4ade80" font-family="system-ui,sans-serif" font-size="8">Ï LONG RANGE ACTIVE</text>
+  <text x="90" y="82" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="8">Thermal · SAR · NDVI</text>
+</svg>

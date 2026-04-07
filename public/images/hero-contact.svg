@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" fill="none" aria-hidden="true">
+  <rect width="400" height="280" rx="18" fill="#f4f4f0" stroke="#e4e4e7"/>
+  <path stroke="#0f1114" stroke-width="2.5" stroke-linecap="round" d="M80 100h240M80 128h180M80 156h200"/>
+  <circle cx="200" cy="200" r="36" stroke="#FF6B6B" stroke-width="2.5" fill="#fff"/>
+  <path stroke="#FF6B6B" stroke-width="2" stroke-linecap="round" d="M188 200h24M200 188v24"/>
+  <rect x="300" y="72" width="48" height="48" rx="10" fill="#4ECDC4" opacity="0.35"/>
+  <path stroke="#0f1114" stroke-width="2" d="M316 88l16 16M332 88l-16 16"/>
+  <text x="200" y="254" text-anchor="middle" fill="#71717a" font-family="system-ui,sans-serif" font-size="12" letter-spacing="0.06em">DIRECT LINE · NO FORMS</text>
+</svg>

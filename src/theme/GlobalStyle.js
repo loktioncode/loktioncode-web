@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 html, body, div, span, applet, object, iframe,
@@ -21,26 +21,42 @@ time, mark, audio, video {
   font: inherit;
   vertical-align: baseline;
 }
-*{
-  margin:0;
+* {
+  margin: 0;
+  box-sizing: border-box;
 }
-/* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
 }
-a{
-  text-decoration:none;
+a {
+  text-decoration: none;
+  color: inherit;
 }
 body {
-  line-height: 1;
-  margin:0;
+  line-height: 1.45;
+  margin: 0;
   overflow-x: hidden;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: ${(p) => p.theme.fam.regular}, system-ui, sans-serif;
+  background: ${(p) => p.theme.color.paper};
+  color: ${(p) => p.theme.color.ink};
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+main {
+  padding-top: 72px;
+}
+section[id] {
+  scroll-margin-top: 80px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 ol, ul {
@@ -62,6 +78,15 @@ table {
   border-spacing: 0;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
 `;
 
 export default GlobalStyle;

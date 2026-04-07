@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" fill="none" aria-hidden="true">
+  <rect width="320" height="240" rx="16" fill="#0c4a6e"/>
+  <circle cx="160" cy="120" r="22" stroke="#38bdf8" stroke-width="3" fill="none"/>
+  <circle cx="160" cy="120" r="6" fill="#38bdf8"/>
+  <circle cx="72" cy="64" r="10" stroke="#a5f3fc" stroke-width="2" fill="#0369a1"/>
+  <circle cx="248" cy="64" r="10" stroke="#a5f3fc" stroke-width="2" fill="#0369a1"/>
+  <circle cx="56" cy="168" r="10" stroke="#a5f3fc" stroke-width="2" fill="#0369a1"/>
+  <circle cx="264" cy="168" r="10" stroke="#a5f3fc" stroke-width="2" fill="#0369a1"/>
+  <path stroke="#7dd3fc" stroke-width="2" stroke-dasharray="4 6" d="M160 98L72 74M160 98L248 74M160 142L56 168M160 142L264 168"/>
+  <rect x="132" y="188" width="56" height="28" rx="6" fill="#0ea5e9" opacity="0.35"/>
+  <text x="160" y="222" text-anchor="middle" fill="#bae6fd" font-family="system-ui,sans-serif" font-size="11" letter-spacing="0.12em">IoT · SENSORS · GATEWAYS</text>
+</svg>

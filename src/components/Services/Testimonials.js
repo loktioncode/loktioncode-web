@@ -15,7 +15,7 @@ const Wrapper = styled.section`
     }
     h4{
         font-family:${props => props.theme.fam.bold};
-        color:#5F7AFF;
+        color:${props => props.theme.color.berry};
         font-size:23px;
         text-align:center;
         margin-bottom:20px;
@@ -51,7 +51,7 @@ const Wrapper = styled.section`
                 }
                 .text{
                     h4{
-                        color:#5F7AFF;
+                        color:${props => props.theme.color.blue4};
                         margin-bottom:5px;
                         text-align:left;
                     }

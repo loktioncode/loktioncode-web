@@ -1,25 +1,41 @@
 /* eslint-disable import/no-anonymous-default-export */
+/** Playful “building blocks” palette + engineering clarity */
 export default {
-    fam:{
-        semibold:'Baloo2-SemiBold',
-        bold:'Baloo2-Bold',
-        regular:'Baloo2-Regular',
-        extrabold:'Baloo2-ExtraBold',
-        medium:'Baloo2-Medium'
-    },
-    color:{
-        grey:"#444",
-        blue:"#20A1D2",
-        blue2:'#5E93C9',
-        blue3:'#4780BA',
-        blue4:'#3770AB',
-        white:"#f3f3f3",
-        smokewhite:'#F9F9F9',
-        green:'#3eb372',
-        orange:'#E76713',
-        pink:'#BD4393',
-        lightgreen:'#74C3C4',
-        yellow:'#EDBB4D',
-        yellow2:'#FDE030',
-    }
-}
+  fam: {
+    semibold: "Baloo2-SemiBold",
+    bold: "Baloo2-Bold",
+    regular: "Baloo2-Regular",
+    extrabold: "Baloo2-ExtraBold",
+    medium: "Baloo2-Medium",
+  },
+  color: {
+    ink: "#2e2640",
+    inkMuted: "#5c5369",
+    paper: "#fff8f0",
+    paper2: "#fff2e6",
+    grey: "#5c5369",
+    blue: "#2d9cdb",
+    blue2: "#5ba3d9",
+    blue3: "#4a8fd4",
+    blue4: "#3a7fc4",
+    white: "#fffaf5",
+    smokewhite: "#fff5eb",
+    green: "#3cb878",
+    orange: "#ff8a3d",
+    pink: "#e85aa0",
+    lightgreen: "#4ecdc4",
+    yellow: "#ffd23f",
+    yellow2: "#ffe066",
+    coral: "#ff6b6b",
+    mint: "#4ecdc4",
+    lavender: "#9b8fd9",
+    peach: "#ffc9a3",
+    tangerine: "#ff9f1c",
+    berry: "#d9468f",
+    sky: "#5dade2",
+  },
+  ease: {
+    out: "cubic-bezier(0.22, 1, 0.36, 1)",
+    outQuart: "cubic-bezier(0.25, 1, 0.5, 1)",
+  },
+};

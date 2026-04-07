@@ -2,203 +2,195 @@ import React from "react";
 import styled from "styled-components";
 import Heading from "../../styled/Heading";
 import Paragraph from "../../styled/Paragraph";
-import { Link } from "react-router-dom";
 import { BsArrowReturnRight } from "react-icons/bs";
 
 const Wrapper = styled.section`
   padding: 10% 20px;
   @media (min-width: 992px) {
-    padding: 5%;
+    padding: 5% 5% 8%;
   }
   @media (min-width: 1200px) {
-    padding: 5% 10%;
+    padding: 5% 8% 10%;
   }
   h2 {
-    margin-bottom: 20px;
+    margin-bottom: 16px;
   }
   p {
-    max-width: 750px;
+    max-width: 760px;
   }
-  .inner {
-    display: flex;
-    gap: 30px;
-    flex-wrap: nowrap;
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
     margin: 40px auto 0;
-    justify-content: space-between;
     max-width: 1400px;
-    overflow-x: auto;
-    padding-bottom: 20px;
-    
-    &::-webkit-scrollbar {
-      height: 8px;
+    @media (min-width: 900px) {
+      grid-template-columns: repeat(2, 1fr);
     }
-    
-    &::-webkit-scrollbar-track {
-      background: #f1f1f1;
-      border-radius: 4px;
+  }
+  .item {
+    background: ${(p) => p.theme.color.smokewhite};
+    border-radius: 16px;
+    padding: 28px;
+    border: 1px solid rgba(46, 38, 64, 0.06);
+    h3 {
+      font-family: ${(props) => props.theme.fam.bold};
+      font-size: 1.35rem;
+      margin-bottom: 18px;
+      color: ${(props) => props.theme.color.blue4};
     }
-    
-    &::-webkit-scrollbar-thumb {
-      background: ${props => props.theme.color.blue4};
-      border-radius: 4px;
-    }
-    
-    .item {
-      min-width: 350px;
-      background: rgba(249, 249, 249, 1);
-      border-radius: 8px;
-      padding: 30px;
-      flex: 1;
-
-      h3 {
-        font-family: ${(props) => props.theme.fam.bold};
-        font-size: 25px;
-        margin-bottom: 20px;
-        color: ${(props) => props.theme.color.blue4};
+    .item-inner {
+      margin-bottom: 22px;
+      &:last-child {
+        margin-bottom: 0;
       }
-
-      .item-inner {
-        margin-bottom: 25px;
-        
-        h4 {
-          font-family: ${(props) => props.theme.fam.bold};
-          color: #000000;
-          font-size: 20px;
-          margin-bottom: 15px;
-        }
-
-        a {
-          color: #000000;
-          font-family: ${props => props.theme.fam.medium};
-          display: flex;
-          align-items: center;
-          padding: 10px 0;
-          text-decoration: none;
-          transition: all 0.3s ease;
-
-          &:hover {
-            color: ${props => props.theme.color.blue4};
-          }
-
-          svg {
-            color: rgba(83, 197, 138, 1);
-            margin-right: 10px;
-            font-size: 20px;
-          }
+      h4 {
+        font-family: ${(props) => props.theme.fam.bold};
+        color: ${(props) => props.theme.color.ink};
+        font-size: 1rem;
+        margin-bottom: 10px;
+        opacity: 0.85;
+      }
+      .row {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 8px 0;
+        color: ${(props) => props.theme.color.inkMuted};
+        font-family: ${(props) => props.theme.fam.medium};
+        font-size: 15px;
+        line-height: 1.45;
+        svg {
+          color: ${(props) => props.theme.color.green};
+          margin-top: 3px;
+          flex-shrink: 0;
+          font-size: 18px;
         }
       }
     }
   }
 `;
 
+const rows = (items) =>
+  items.map((label, i) => (
+    <div className="row" key={i}>
+      <BsArrowReturnRight aria-hidden />
+      <span>{label}</span>
+    </div>
+  ));
+
 function Full() {
   return (
     <Wrapper>
-      <Heading textColor="rgb(83, 197, 138)">
-        Our Full List of <br />
-        <span>Services</span>
+      <Heading textColor="#3cb878">
+        Services <span>in depth</span>
       </Heading>
       <Paragraph>
-        At LOKTIONCODE, we specialize in cutting-edge digital solutions that transform businesses. Our expertise spans across AI Solutions, IoT Solutions, and Custom Software Development, delivering innovative technology solutions that drive growth and efficiency.
+        End-to-end engineering: we combine product software, device firmware,
+        board-level work, applied AI, and ICT consultancy  IT support and
+        hardware troubleshooting  so your system behaves as one product, not a
+        pile of repos.
       </Paragraph>
-      <div className="inner">
+      <div className="grid">
         <div className="item">
-          <h3>AI Solutions</h3>
+          <h3>Software & cloud</h3>
           <div className="item-inner">
-            <h4>Machine Learning</h4>
-            <Link>
-              <BsArrowReturnRight /> Predictive Analytics
-            </Link>
-            <Link>
-              <BsArrowReturnRight /> Natural Language Processing
-            </Link>
-            <Link>
-              <BsArrowReturnRight /> Computer Vision
-            </Link>
-            <Link>
-              <BsArrowReturnRight /> Deep Learning
-            </Link>
+            <h4>Product & integration</h4>
+            {rows([
+              "Custom applications and internal tools",
+              "REST / GraphQL APIs and service boundaries",
+              "Auth, roles, and audit trails",
+              "CI/CD, environments, and observability",
+            ])}
           </div>
           <div className="item-inner">
-            <h4>Business Intelligence</h4>
-            <Link>
-              <BsArrowReturnRight /> Data Analytics
-            </Link>
-            <Link>
-              <BsArrowReturnRight /> Business Process Automation
-            </Link>
-            <Link>
-              <BsArrowReturnRight /> Decision Support Systems
-            </Link>
-            <Link>
-              <BsArrowReturnRight /> Performance Analytics
-            </Link>
+            <h4>Data & ML ops</h4>
+            {rows([
+              "Pipelines, labeling workflows, and evaluation",
+              "Model packaging and versioning",
+              "Batch and streaming inference patterns",
+            ])}
           </div>
         </div>
         <div className="item">
-          <h3>IoT Solutions</h3>
+          <h3>Embedded & IoT</h3>
           <div className="item-inner">
-            <h4>Smart Systems</h4>
-            <Link>
-              <BsArrowReturnRight /> Industrial IoT
-            </Link>
-            <Link>
-              <BsArrowReturnRight /> Smart Manufacturing
-            </Link>
-            <Link>
-              <BsArrowReturnRight /> Asset Tracking
-            </Link>
-            <Link>
-              <BsArrowReturnRight /> Remote Monitoring
-            </Link>
+            <h4>Devices & fleets</h4>
+            {rows([
+              "Sensors, MCUs, and Linux edge",
+              "MQTT, CoAP, LTE / LoRa where appropriate",
+              "Provisioning, keys, and secure OTA",
+              "Fleet health, logs, and remote diagnostics",
+            ])}
           </div>
           <div className="item-inner">
-            <h4>IoT Integration</h4>
-            <Link>
-              <BsArrowReturnRight /> Device Management
-            </Link>
-            <Link>
-              <BsArrowReturnRight /> Data Collection
-            </Link>
-            <Link>
-              <BsArrowReturnRight /> Real-time Analytics
-            </Link>
-            <Link>
-              <BsArrowReturnRight /> System Integration
-            </Link>
+            <h4>Real-time</h4>
+            {rows([
+              "Control loops and timing budgets",
+              "RTOS tasks, ISRs, and DMA",
+              "Field buses and calibration",
+            ])}
           </div>
         </div>
         <div className="item">
-          <h3>Software Development</h3>
+          <h3>PCB & firmware</h3>
           <div className="item-inner">
-            <h4>Enterprise Solutions</h4>
-            <Link>
-              <BsArrowReturnRight /> Custom Software
-            </Link>
-            <Link>
-              <BsArrowReturnRight /> System Integration
-            </Link>
-            <Link>
-              <BsArrowReturnRight /> API Development
-            </Link>
-            <Link>
-              <BsArrowReturnRight /> Legacy Modernization
-            </Link>
+            <h4>Hardware bring-up</h4>
+            {rows([
+              "Architecture support with your EE partner",
+              "Prototype assembly and rework",
+              "Test jigs and boundary-scan where useful",
+              "Power, reset, and clock validation",
+            ])}
           </div>
           <div className="item-inner">
-            <h4>Cloud Services</h4>
-            <Link>
-              <BsArrowReturnRight /> Cloud Migration
-            </Link>
-            <Link>
-              <BsArrowReturnRight /> Cloud Architecture
-            </Link>
-            <Link>
-              <BsArrowReturnRight /> DevOps Solutions
-            </Link>
-            <Link>
-              <BsArrowReturnRight /> Cloud Security
-            </Link>
+            <h4>Firmware</h4>
+            {rows([
+              "Bare-metal and RTOS (FreeRTOS, Zephyr, etc.)",
+              "Bootloaders and fail-safe recovery",
+              "Drivers: SPI, I2C, SDIO, USB, CAN",
+            ])}
+          </div>
+        </div>
+        <div className="item">
+          <h3>AI, robotics & UAVs</h3>
+          <div className="item-inner">
+            <h4>Applied ML</h4>
+            {rows([
+              "Domain-specific datasets and augmentation",
+              "Fine-tuning and distillation for edge",
+              "CV, tracking, and fusion with IMU/GNSS",
+              "On-device inference (TensorRT, TFLite, custom)",
+            ])}
+          </div>
+          <div className="item-inner">
+            <h4>Autonomy stacks</h4>
+            {rows([
+              "Ground robots: navigation, safety, mission logic",
+              "UAVs: link budgets, failsafe, and payload integration",
+              "Simulation and replay for regression",
+            ])}
+          </div>
+        </div>
+        <div className="item">
+          <h3>ICT consultancy & IT support</h3>
+          <div className="item-inner">
+            <h4>Workplace & infrastructure</h4>
+            {rows([
+              "Helpdesk-style support for desktops, laptops, and peripherals",
+              "Windows / macOS troubleshooting, imaging, and policy basics",
+              "Office networks: Wi‑Fi, switching, routing, and VPN access",
+              "Backups, antivirus, and recovery planning",
+            ])}
+          </div>
+          <div className="item-inner">
+            <h4>Hardware & connectivity</h4>
+            {rows([
+              "On-site diagnostics for workstations, docks, and displays",
+              "Printer, scanner, and peripheral setup and fault finding",
+              "Cabling and rack tidy-ups with your facilities team",
+              "Coordination with vendors for warranty and RMA workflows",
+            ])}
           </div>
         </div>
       </div>

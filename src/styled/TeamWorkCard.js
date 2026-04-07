@@ -69,7 +69,7 @@ function HipCard({link, heading, text, icon, bgColor, type, spanColor}) {
     <Wrapper spanColor={spanColor} bgColor={bgColor} className="team-card">
       <span className="span">{type}</span>
         <Link to={`/${link}`}><FiArrowUpRight /></Link>
-        <img src={`./images/${icon}.svg`} alt={heading} />
+        <img src={`/images/${icon}.svg`} alt={heading} />
         <h3>{heading}</h3>
         <Paragraph>{text}</Paragraph>
     </Wrapper>

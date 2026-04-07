@@ -1,84 +1,89 @@
-import React from 'react';
-import styled from 'styled-components';
-import Heading from '../../styled/Heading';
-import Paragraph from '../../styled/Paragraph';
-import { Link } from 'react-router-dom';
-import {FiArrowUpRight} from 'react-icons/fi';
+import React from "react";
+import styled from "styled-components";
+import Heading from "../../styled/Heading";
+import Paragraph from "../../styled/Paragraph";
+import { FiArrowUpRight } from "react-icons/fi";
 
 const Wrapper = styled.section`
-padding:10% 20px;
-@media(min-width:992px){
+  padding: 5% 20px;
+  @media (min-width: 992px) {
     display: flex;
     align-items: center;
-    justify-content:space-between;
-    .about-inner{
-        width:55%;
+    justify-content: space-between;
+    gap: 26px;
+    .about-inner {
+      width: 58%;
     }
-}
-@media(min-width:1200px){
-    padding:5% 8%;
-}
-    img{
-        width:100%;
-        display: block;
-        max-width:450px;
-        margin:0 auto;
+  }
+  @media (min-width: 1200px) {
+    padding: 4% 8%;
+  }
+  h2 {
+    margin-bottom: 20px;
+    @media (min-width: 992px) {
+      line-height: 1.2;
     }
-    h2{
-        margin-bottom:20px;
-        @media(min-width:992px){
-            line-height:43px;
-        }
-        img{
-                object-fit:contain;
-                width:20px;
-                margin:unset;
-                display: unset;
-                transform: translateY(6px);
-            }
-       
+  }
+  p {
+    margin-bottom: 12px;
+  }
+  a {
+    font-family: ${(props) => props.theme.fam.bold};
+    color: ${(props) => props.theme.color.blue};
+    text-transform: uppercase;
+    font-size: 18px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    line-height: 1.4;
+    margin-top: 12px;
+    @media (min-width: 768px) {
+      font-size: 22px;
     }
-    p{
-            margin-bottom:10px;
-        }
-    a{
-        font-family:${props => props.theme.fam.bold};
-        color:${props => props.theme.color.blue};
-        text-transform:uppercase;
-        font-size:20px;
-        display:flex;
-        align-items: center;
-        line-height:40px;
-        @media(min-width:768px){
-            font-size:30px;
-        }
-        svg{
-            color:${props => props.theme.color.orange};
-        }
+    svg {
+      color: ${(props) => props.theme.color.orange};
     }
-    .about-image{
-        @media(min-width:992px){
-            width:40%;
-        }
+  }
+  .about-visual {
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid rgba(15, 17, 20, 0.08);
+    img {
+      width: 100%;
+      display: block;
+      height: auto;
     }
-`
+    @media (min-width: 992px) {
+      width: 40%;
+    }
+  }
+`;
 
 function About() {
   return (
-    <Wrapper>
-        <div className="about-inner">
-            <Heading textColor="rgba(83, 197, 138, 1)">We Love Being Creative, <br /> And Drinking <span>Jäger</span><img src="./images/bottle.png" alt="bottle" /></Heading>
-            <Paragraph>
-            LOKTIONCODE is a forward-thinking technology company dedicated to delivering innovative digital solutions. Led by Elisha Bere, our lead developer, we combine technical expertise with business acumen to create transformative solutions that drive success for our clients.
-            </Paragraph>
-            <Paragraph>
-            With a focus on AI, IoT, and custom software development, we help businesses leverage cutting-edge technology to achieve their goals and stay ahead in the digital landscape.
-            </Paragraph>
-            <Link to="/services">About The Brand <FiArrowUpRight /></Link>
-        </div>
-        <img className='about-image' src="./images/3blocks.webp" alt="blocks loktion code" />
+    <Wrapper id="about">
+      <div className="about-inner">
+        <Heading textColor="#3cb878">
+          From sketch to <span>field-tested</span> systems.
+        </Heading>
+        <Paragraph>
+          LOXIONCODE is an engineering studio focused on integrated products:
+          software that meets metal, radios that stay linked, and models that
+          are trained for your environment  not a generic benchmark.
+        </Paragraph>
+        <Paragraph>
+          Led by Elisha Bere, we work with teams that need proof, not slides:
+          prototypes, pilots, and paths to scale.
+        </Paragraph>
+        <a href="#team">
+          Meet the team <FiArrowUpRight />
+        </a>
+      </div>
+      <div className="about-visual">
+        <img src="/images/hero-tech.svg" alt="" />
+      </div>
     </Wrapper>
-  )
+  );
 }
 
 export default About;

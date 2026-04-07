@@ -1,208 +1,73 @@
-import React, { useState } from "react";
-import { TextField } from "@mui/material";
+import React from "react";
 import styled from "styled-components";
-import Fade from "react-reveal";
-import axios from "axios";
-import Heading from "../../styled/Heading";
 import Paragraph from "../../styled/Paragraph";
-import { FiArrowUpRight } from "react-icons/fi";
+import ContactButtons from "../ContactButtons";
+
+const ContactTitle = styled.h2`
+  font-family: ${(p) => p.theme.fam.bold};
+  font-weight: 800;
+  font-size: clamp(1.65rem, 4vw, 2.5rem);
+  line-height: 1.15;
+  color: ${(p) => p.theme.color.ink};
+  margin-bottom: 0.5em;
+  span {
+    color: #ff6b6b;
+  }
+`;
 
 const Wrapper = styled.section`
-  background: ${(props) => props.theme.color.blue3};
-  padding: 10% 20px;
-  @media(min-width:992px){
-    display:flex;
-    flex-wrap:wrap;
-    position:relative;
-    padding-bottom:3%
-  }
-  img {
-    width: 100%;
-    display: block;
-    margin: 0 auto;
-    max-width: 450px;
-    @media(min-width:992px){
-      max-width:550px;
-      z-index:1;
-      width:45%;
-      object-fit:contain;
-
-    }
-  }
-  h2 {
-    color: #ffffff;
-    br {
-      display: none;
-      @media (min-width: 768px) {
-        display: block;
-      }
-    }
-  }
-  p {
-    color: #ffffff;
-  }
-  .left{
-    max-width:535px;
-    margin:0 auto;
-    @media(min-width:92px){
-      width:45%;
-    }
-  }
-  form {
-    
-    margin-top: 30px;
-    
-    
-  }
-  .MuiFormControl-root {
-    width: 100%;
-    margin-bottom: 20px;
-    background: #5e93c9;
-    height: 50px;
-    input,
-    textarea,
-    label {
-      color: #ffffff !important;
-      padding-left: 10px;
-      font-family: ${(props) => props.theme.fam.semibold} !important;
-    }
-    .MuiInputBase-root {
-      &:before,
-      &:after {
-        border-bottom: none !important;
-      }
-    }
-    .MuiInputBase-root {
-      &:before {
-        border-bottom: none !important;
-      }
-    }
-    [data-shrink="true"] {
-      color: #ffffff !important;
-
-      &:after {
-        border: none !important;
-      }
-    }
-  }
-  button {
-    background: transparent;
-    border: none;
+  padding: 4% 20px 5%;
+  border-top: 1px solid rgba(15, 17, 20, 0.08);
+  background: transparent;
+  @media (min-width: 992px) {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    color: #fff;
-    text-align: center;
-    font-size: 20px;
-    font-family: ${(props) => props.theme.fam.bold};
-    font-weight: 800;
-    text-transform: uppercase;
-    svg {
-      color: ${(props) => props.theme.color.yellow};
+    justify-content: space-between;
+    gap: 40px;
+    padding: 3% 5% 4%;
+  }
+  .visual {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    @media (min-width: 992px) {
+      width: 42%;
+      margin: 0;
+    }
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 14px;
+    }
+  }
+  .left {
+    max-width: 560px;
+    margin: 0 auto;
+    @media (min-width: 992px) {
+      width: 48%;
+      margin: 0;
     }
   }
 `;
 
 function Contact() {
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [isFailed, setIsFailed] = useState("");
-  const [formData, setFormData] = useState({
-    fullName: "",
-    email: "",
-    message: "",
-  });
-
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    try {
-      // Send form data to server or API endpoint
-      const response = await axios.post(
-        "https://formsubmit.co/email@gmail.com",
-        formData
-      );
-      console.log("Form submission successful:", response.data);
-      setIsSubmitted(true);
-      setTimeout(() => {
-        setIsSubmitted(false);
-        setFormData({
-          fullName: "",
-          email: "",
-          message: "",
-        });
-      }, 5000);
-    } catch (error) {
-      setIsFailed("Form submission failed");
-      setTimeout(() => {
-        setIsFailed("");
-      }, 5000);
-    }
-  };
   return (
-    <Wrapper>
+    <Wrapper id="contact">
       <div className="left">
-        <Heading>
-          We Love Working With People <br /> To Create Awesome Work.
-        </Heading>
+        <ContactTitle>
+          <span>Let’s build</span> something real.
+        </ContactTitle>
         <Paragraph>
-          Leave us your details and we will schedule a call with you
+          Tell us about sensors, fleets, models, or deadlines  we’ll respond by
+          phone or email. No forms; just direct lines to the team.
         </Paragraph>
-        <form method="POST" onSubmit={handleSubmit}>
-          <TextField
-            id="fullName"
-            variant="standard"
-            name="fullName"
-            label="Your Name"
-            value={formData.fullName}
-            onChange={handleInputChange}
-            required
-          />
-          <TextField
-            id="email"
-            variant="standard"
-            name="email"
-            label="Your Email"
-            value={formData.email}
-            onChange={handleInputChange}
-            required
-          />
-          <TextField
-            id="message"
-            name="message"
-            variant="standard"
-            label="How Should We Collaborate"
-            multiline
-            value={formData.message}
-            onChange={handleInputChange}
-            rows={3}
-            required
-          />
-
-          <input
-            type="hidden"
-            name="_subject"
-            value="New submission from your website!"
-          />
-          <input type="text" name="_honey" style={{ display: "none" }} />
-          <input type="hidden" name="_template" value="box" />
-          <button type="submit">
-            Submit <FiArrowUpRight />
-          </button>
-        </form>
-
-        {isSubmitted && (
-          <div style={{ color: "green", marginTop: 20, textAlign: "center" }}>
-            <Fade bottom>Submitted successfully!</Fade>{" "}
-          </div>
-        )}
-        <div style={{ color: "red", marginTop: 20, textAlign: "center" }}>
-          <Fade bottom>{isFailed}</Fade>
-        </div>
+        <ContactButtons />
       </div>
-      <img src="./images/manyblocks.webp" alt="Contact Blocks Loktion Code" />
+      <div className="visual">
+        <img src="/images/hero-contact.svg" alt="" />
+      </div>
     </Wrapper>
   );
 }

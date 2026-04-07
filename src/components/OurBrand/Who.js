@@ -2,77 +2,67 @@ import React from "react";
 import styled from "styled-components";
 import Heading from "../../styled/Heading";
 import Paragraph from "../../styled/Paragraph";
-import pic1 from "../../assets/clubhouse/club1.webp";
-import pic2 from "../../assets/clubhouse/club2.webp";
-import pic3 from "../../assets/clubhouse/club3.webp";
-import pic4 from "../../assets/clubhouse/club4.webp";
-import pic5 from "../../assets/clubhouse/club5.webp";
-import pic6 from "../../assets/clubhouse/club6.webp";
 import ClubHouseCard from "../../styled/ClubHouseCard";
 
 const Wrapper = styled.section`
-    margin:0 20px;
-    border-radius:10px;
-    background:${props => props.theme.color.blue3};
-    padding:5%;
-    text-align:center;
-    @media(min-width:992px){
-      margin:0% 40px;
-      
+  margin: 0 20px;
+  padding: 5% 5% 6%;
+  text-align: center;
+  @media (min-width: 992px) {
+    margin: 0 40px;
+  }
+  h2 {
+    color: ${(props) => props.theme.color.ink};
+  }
+  p {
+    color: ${(props) => props.theme.color.inkMuted};
+  }
+  .inner {
+    margin-top: 24px;
+    @media (min-width: 768px) {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
     }
-    h2{
-        color:#ffffff;
-    }
-    p{
-        color:#ffffff;
-    }
-    .inner{
-      margin-top:30px;
-      @media(min-width:768px){
-        display: flex;
-        gap:30px;
-        justify-content:center;
-        flex-wrap:wrap;
-      }
-    }
+  }
 `;
 
 const list = [
   {
-    image: pic1,
-    title: "Walter (UI/UX Designer)",
-    text: "Creates intuitive and engaging user experiences through innovative design solutions",
+    image: "/images/team-1.svg",
+    title: "Walter (Product & UX)",
+    text: "Turns complex workflows into interfaces operators can trust in the field.",
   },
   {
-    image: pic2,
-    title: "Elisha Bere (Lead Developer)",
-    text: "Leads the development of cutting-edge technology solutions with expertise in AI and IoT",
+    image: "/images/team-2.svg",
+    title: "Elisha Bere (Lead engineer)",
+    text: "Architects full stacks  embedded, cloud, and models  for robots and UAV programs.",
   },
   {
-    image: pic3,
-    title: "Ngoni (Software Developer)",
-    text: "Specializes in building robust and scalable software solutions for complex business needs",
-  }
+    image: "/images/team-3.svg",
+    title: "Ngoni (Software & systems)",
+    text: "Ships reliable services, integrations, and telemetry pipelines under real load.",
+  },
 ];
 
 function Who() {
   return (
-    <Wrapper>
-      <Heading>Who's In Our Clubhouse?</Heading>
+    <Wrapper id="team">
+      <Heading>Who builds with you?</Heading>
       <Paragraph>
-        Meet our talented team of experts who bring innovation and creativity to every project
+        A small, senior team  design, software, and hardware thinking in the same
+        room.
       </Paragraph>
       <div className="inner">
-        {list.map((item, i) => {
-          return (
-            <ClubHouseCard
-              key={i}
-              image={item.image}
-              title={item.title}
-              text={item.text}
-            />
-          );
-        })}
+        {list.map((item, i) => (
+          <ClubHouseCard
+            key={i}
+            image={item.image}
+            title={item.title}
+            text={item.text}
+          />
+        ))}
       </div>
     </Wrapper>
   );

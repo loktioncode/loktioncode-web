@@ -6,7 +6,7 @@ const HEADLINES = [
   { text: "Engineering at the pace of change", accent: "#ff6b6b" },
   { text: "Custom IoT & firmware  field-ready", accent: "#ff9f1c" },
   { text: "AI models built for your data", accent: "#4ecdc4" },
-  { text: "PCB, UAVs & robotics from scratch", accent: "#9b8fd9" },
+  { text: "PCB design, UAVs & robotics systems", accent: "#9b8fd9" },
   { text: "ICT support & digital transformation", accent: "#d9468f" },
 ];
 

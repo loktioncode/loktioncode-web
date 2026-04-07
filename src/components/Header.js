@@ -3,9 +3,6 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import Logo from "./Logo";
 
-/* Each nav item's accent colour, in DOM order */
-const LINK_COLORS = ["#ff6b6b", "#ff9f1c", "#4ecdc4", "#9b8fd9", "#d9468f"];
-
 /* Sections to observe for scroll-spy (in page order) */
 const SPY_IDS = ["hero", "services", "about", "team", "contact"];
 
